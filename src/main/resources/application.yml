@@ -1,0 +1,53 @@
+server:
+  port: 9090
+
+server.address: 0.0.0.0
+# 后端地址
+ip:
+  server: http://114.116.6.228:9090
+
+spring:
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 5MB
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/qarobot?serverTimezone=GMT%2b8
+    username: root
+    password: Qarobot_root123
+  mail:
+    protocol: smtps
+    host: smtp.163.com
+    username: Vaifer_tools@163.com
+    password: WZQZHWMVKQFRFYEL
+    #465/587
+    port: 587
+    default-encoding: UTF-8
+
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+files:
+  upload:
+    #用户上传文件保存目录
+    path: /pub/bks_2022/QAData/file/
+    #标签化处理后文件保存目录
+    ppath: /pub/bks_2022/QAData/processed/
+    #模型服务器地址
+    #QA
+    QApath: http://127.0.0.1:9007/predictions/
+    #HASH
+    Hashpath: http://127.0.0.1:9004
+    #QG
+    QGpath: http://127.0.0.1:9005
+    #LUCENE
+    Lucenepath: 127.0.0.1
+    #标签化
+    LPpath: http://10.27.138.51:5000
+
+
